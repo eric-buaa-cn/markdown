@@ -4,6 +4,8 @@ Add this line to tools/bazel.rc:
 
 build --copt -fsanitize=address
 
+build --copt -fno-omit-frame-pointer
+
 ### step 2
 
 Add -lasan to linkopts in BUILD.bazel，perhaps the -lasan should be the first one:
