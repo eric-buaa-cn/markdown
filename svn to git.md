@@ -12,7 +12,7 @@ cd svnrepo
 
 svn作者格式与git作者格式有差异，这一步骤用于制作两者的映射文件。
 ```bash
-svn log --quiet http://SVN_HOST/demo/ | grep -E "r[0-9]+ \| .+ \|" | cut -d'|' -f2 | sed 's/ //g' | sort | uniq | awk '{print $0" = "$0" <"$0".yy.com>"}' > authors.txt
+svn log --quiet http://SVN_HOST/demo/ | grep -E "r[0-9]+ \| .+ \|" | cut -d'|' -f2 | sed 's/ //g' | sort | uniq | awk '{print $0" = "$0" <"$0".your.com>"}' > authors.txt
 ```
 
 3. 迁出svn库
