@@ -395,3 +395,10 @@ nc      87000 eric    3u  IPv6 0xbd324f68e879a635      0t0  TCP *:1234 (LISTEN)
 
 * socat
 > tcp proxy
+
+
+
+### Q&A
+
+* How to find out what other hosts are connected to my host
+> ss -a | grep tcp | egrep -v "LISTEN|UNCONN" | awk '{ split($6,array,":"); printf "%s\n", array[1]}' | sort | uniq | sed /^\$/d
