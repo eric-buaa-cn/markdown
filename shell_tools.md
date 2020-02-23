@@ -21,3 +21,10 @@ I want to delete the dmg(s) except the latest one.
 ```bash
 find . ! -newer WXWork_3.0.10.2094.dmg | xargs rm
 ```
+
+### sort
+* How to sort du's result?
+
+```bash
+du -sh * | sort -h
+```
